@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javscript Stopwatch</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper-theme-change">
+            <button class="fa fa-sliders change-theme-btn" onclick="changeTheme()"></button>
+        </div>
+        <div class="wrapper">
+            <header>
+                <h1>JS Stopwatch</h1>
+            </header>
+
+            <p class="time"><span id="seconds">00</span>:<span id="milli">00</span></p>
+            <div class="media-btns">
+                <button id="start-btn" class="ctrl-buttons">Start</button>
+                <button id="stop-btn" class="ctrl-buttons">Stop</button>
+                <button id="reset-btn" class="ctrl-buttons">Reset</button>
+            </div>
+        </div>
+        
+        <!--Change Theme Popup-->
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h1 class="title">Change Theme</h1>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <input type="radio" id="green" name="color-picker" value="green">
+                    <label for="green">Green <span>current</span></label><br>
+                    <input type="radio" id="orange" name="color-picker" value="orange">
+                    <label for="orange">Orange</label><br>
+                    <input type="radio" id="cyan" name="color-picker" value="cyan">
+                    <label for="cyan">Cyan</label><br>
+                    <input type="radio" id="dark" name="color-picker" value="dark">
+                    <label for="dark">Dark Mode</label>
+                </form>
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+
+        <footer>
+            <div class="github">
+                <a href="https://github.com/Nerdvona" class="github-link" target="_blank">
+                    <!--Link text--> <p class="github-txt">Find Me</p>
+                    <div class="github-logo">
+                        <i class="fa fa-github"></i>
+                    </div> 
+                </a>
+            </div>
+        </footer>
+        <script defer src="./app.js"></script>
+    </body>
+</html>
