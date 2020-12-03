@@ -32,6 +32,54 @@ body, button {
     cursor: pointer;
 }
 
+/* Change Theme Popup */
+.modal-container {
+    /* display: none;   setting display none till finished editing*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    z-index: 10;
+    background-color: #FFF;
+    color: #000;
+    width: 420px; /*haha funny weed number */
+    height: 270px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-left: 100px;
+}
+
+.close-btn {
+    margin-left: 60px;
+    border: none;
+    background-color: #FFF;
+    color: #000;
+    font-size: 50px;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+    animation-name: modal-close-btn;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+/* slight black modal overlay */
+#overlay {
+    /* display: none; setting display none till finished editing*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -67,11 +115,6 @@ header {
     animation-name: ctrl-buttons-bg;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
-}
-
-.modal {
-    display: ;
-    position: absolute;
 }
 
 footer {
@@ -111,5 +154,10 @@ footer {
     to {background-color: #FFF;}
     /* text animation */
     from {color: #FFF;}
+    to {color: var(--background-color);}
+}
+
+@keyframes modal-close-btn {
+    from {color: #000;}
     to {color: var(--background-color);}
 }
