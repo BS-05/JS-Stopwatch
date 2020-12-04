@@ -5,6 +5,7 @@
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
         <link href="./style.css" rel="stylesheet">
     </head>
     <body>
@@ -28,19 +29,20 @@
         <div class="modal-container" id="modal-container">
             <div class="modal" id="modal">
                 <div class="modal-header">
-                    <h1 class="title">Change Theme</h1>
+                    <h1 class="title"><span id="change-span">Change</span> <span id="theme-span">Theme</span></h1>
                     <button class="close-btn">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form class="modal-form">
+                        <!--Green Label-->
                         <input type="radio" id="green" name="color-picker" value="green">
-                        <label for="green">Green <span>current</span></label><br>
+                        <label for="green" class="green labels">Green</label><br>
+                        <!--Orange Label-->
                         <input type="radio" id="orange" name="color-picker" value="orange">
-                        <label for="orange">Orange</label><br>
-                        <input type="radio" id="cyan" name="color-picker" value="cyan">
-                        <label for="cyan">Cyan</label><br>
+                        <label for="orange" class="orange labels">Orange</label><br>
+                        <!--Dark Mode Label-->
                         <input type="radio" id="dark" name="color-picker" value="dark">
-                        <label for="dark">Dark Mode</label>
+                        <label for="dark" class="dark labels">Dark Mode</label>
                     </form>
                 </div>
             </div>

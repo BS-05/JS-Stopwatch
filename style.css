@@ -1,5 +1,6 @@
 :root {
     --background-color: rgb(42, 194, 67);
+    --orange-background-color: rgb(255, 166, 0);
 }
 
 * {
@@ -40,8 +41,8 @@ body, button {
     left: 50%;
     transform: translate(-50%, -110%);
     z-index: 10;
-    background-color: #FFF;
-    color: #000;
+    background-color: #000;
+    color: #FFF;
     width: 420px; /*haha funny weed number */
     height: 270px;
 }
@@ -55,11 +56,24 @@ body, button {
     margin-left: 100px;
 }
 
+/* When the user hovers over the title words ("change" and "theme"). They change to the background color. */
+#change-span:hover {
+    transition: 0.5s;
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+#theme-span:hover {
+    transition: 0.5s;
+    color: var(--background-color);
+    cursor: pointer;
+}
+
 .close-btn {
     margin-left: 60px;
     border: none;
-    background-color: #FFF;
-    color: #000;
+    background-color: #000;
+    color: #FFF;
     font-size: 50px;
 }
 
@@ -69,6 +83,54 @@ body, button {
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
 }
+
+/* Label Styles */
+input {
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+}
+
+.modal-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.labels {
+    font-family: 'Lato', sans-serif;
+    border-color: #FFF;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 140px;
+    margin-right: 140px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.green:hover {
+    animation-name: green-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.orange:hover {
+    animation-name: orange-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.dark:hover {
+    animation-name: dark-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 /* slight black modal overlay */
 #overlay {
     /* display: none; setting display none till finished editing*/
@@ -157,7 +219,38 @@ footer {
     to {color: var(--background-color);}
 }
 
+/* Modal Animations */
 @keyframes modal-close-btn {
-    from {color: #000;}
+    from {color: #FFF;}
     to {color: var(--background-color);}
+}
+
+@keyframes green-hover {
+    from {border-color: #FFF;}
+    to {border-color: var(--background-color);}
+
+    from {color: #FFF;}
+    to {color: var(--background-color);}
+
+    from {background-color: #000;}
+    to {background-color: #FFF;}
+}
+
+@keyframes orange-hover {
+    from {border-color: #FFF;}
+    to {border-color: var(--orange-background-color);}
+
+    from {color: #FFF;}
+    to {color: var(--orange-background-color);}
+
+    from {background-color: #000;}
+    to {background-color: #FFF;}
+}
+
+@keyframes dark-hover {
+    from {color: #FFF;}
+    to {color: #000;}
+
+    from {background-color: #000;}
+    to {background-color: #FFF;}
 }
