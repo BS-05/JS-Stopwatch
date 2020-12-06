@@ -133,7 +133,7 @@ body, button {
 
 /* Change Theme Popup */
 .modal-container {
-    /* display: none;   setting display none till finished editing*/
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -242,7 +242,7 @@ label {
 
 /* slight black modal overlay */
 #overlay {
-    /* display: none; setting display none till finished editing*/
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
