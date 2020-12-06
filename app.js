@@ -29,3 +29,53 @@ function dark() {
 
 
 // Stopwatch
+
+let milli = 00;
+let seconds = 00;
+
+let startButton = document.getElementById('start-btn');
+let stopButton = document.getElementById('stop-btn');
+let resetButton = document.getElementById('reset-btn');
+let elementSeconds = document.getElementById('seconds');
+let elementMilli = document.getElementById('milli');
+let interval ;
+
+function buttonStart() {
+    clearInterval(interval);
+    interval = setInterval(startTimer, 10);
+}
+
+function startTimer() {
+    milli++;
+
+    if (milli < 9) {
+        elementMilli.innerHTML = "0" + milli;
+    }
+
+    if (milli > 9) {
+        elementMilli.innerHTML = milli;
+    }
+
+    if (milli > 99) {
+        seconds++;
+        elementSeconds.innerHTML = "0" + seconds;
+        milli = 0;
+        elementMilli.innerHTML = "0" + 0;
+    }
+
+    if (seconds > 9) {
+        elementSeconds.innerHTML = seconds;
+    }
+}
+
+function stopTimer() {
+    clearInterval(interval);
+}
+
+function resetTimer() {
+    clearInterval(interval);
+    seconds = 00;
+    milli = 00;
+    elementSeconds.innerHTML = seconds;
+    elementMilli.innerHTML = milli;
+}
