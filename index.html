@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="wrapper-theme-change">
-            <button class="fa fa-sliders change-theme-btn" onclick="popUp()"></button>
+            <button class="fa fa-sliders change-theme-btn" onclick="modalShow()"></button>
         </div>
         <div class="wrapper">
             <header>
@@ -27,23 +27,20 @@
         
         <!--Change Theme Popup-->
         <div class="modal-container" id="modal-container">
-            <div class="modal" id="modal">
+            <div class="modal gradient-border" id="modal">
                 <div class="modal-header">
-                    <h1 class="title"><span id="change-span">Change</span> <span id="theme-span">Theme</span></h1>
-                    <button class="close-btn">&times;</button>
+                    <h1 class="title"><span class="change-span">Change</span> <span class="theme-span">Theme</span></h1>
+                    <button class="close-btn" id="closeBtn" onclick="closeModal()">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form class="modal-form">
+                    <div class="modal-btn-container">
                         <!--Green Label-->
-                        <input type="radio" id="green" name="color-picker" value="green">
-                        <label for="green" class="green labels">Green</label><br>
+                        <button class="green labels" onclick="green()">Green</button>
                         <!--Orange Label-->
-                        <input type="radio" id="orange" name="color-picker" value="orange">
-                        <label for="orange" class="orange labels">Orange</label><br>
+                        <button id="orange" class="orange labels" onclick="orange()">Orange</button>
                         <!--Dark Mode Label-->
-                        <input type="radio" id="dark" name="color-picker" value="dark">
-                        <label for="dark" class="dark labels">Dark Mode</label>
-                    </form>
+                        <button class="dark labels" onclick="dark()">Dark Mode</button>
+                    </div>
                 </div>
             </div>
         </div>

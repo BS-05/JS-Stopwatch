@@ -1,6 +1,104 @@
 :root {
-    --background-color: rgb(42, 194, 67);
+    --green-background-color: rgb(42, 194, 67);
     --orange-background-color: rgb(255, 166, 0);
+    --dark-background-color: rgb(53, 54, 58);
+    --main-transition: 0.5s;
+}
+
+
+/* Themes */
+
+
+/* Green Theme */
+.green-mode {
+    background-color: var(--green-background-color);
+}
+
+.green-mode .ctrl-buttons {
+    background-color: var(--green-background-color);
+}
+
+.green-mode .change-theme-btn {
+    background-color: var(--green-background-color);
+}
+
+
+
+
+/* Orange Theme */
+.orange-mode {
+    background-color: var(--orange-background-color);
+}
+
+.orange-mode .ctrl-buttons {
+    background-color: var(--orange-background-color);
+}
+
+.orange-mode .change-theme-btn {
+    background-color: var(--orange-background-color);
+}
+
+.orange-mode .ctrl-buttons:hover {
+    animation-name: orange-ctrl-btn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.orange-mode .change-span:hover {
+    transition: var(--main-transition);
+    color: var(--orange-background-color);
+    cursor: pointer;
+}
+
+.orange-mode .theme-span:hover {
+    transition: var(--main-transition);
+    color: var(--orange-background-color);
+    cursor: pointer;
+}
+
+.orange-mode .close-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--orange-background-color);
+    cursor: pointer;
+}
+
+/* Dark Theme */
+.dark-mode {
+    background-color: var(--dark-background-color);
+}
+
+.dark-mode .ctrl-buttons {
+    background-color: var(--dark-background-color);
+}
+
+.dark-mode .change-theme-btn {
+    background-color: var(--dark-background-color);
+}
+
+.dark-mode .ctrl-buttons:hover {
+    animation-name: dark-ctrl-btn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.dark-mode .change-span:hover {
+    transition: var(--main-transition);
+    color: var(--dark-background-color);
+    cursor: pointer;
+}
+
+.dark-mode .theme-span:hover {
+    transition: var(--main-transition);
+    color: var(--dark-background-color);
+    cursor: pointer;
+}
+
+.dark-mode .close-btn:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--dark-background-color);
+    cursor: pointer;
 }
 
 * {
@@ -15,7 +113,7 @@ body {
 }
 
 body, button {
-    background-color: var(--background-color);
+    background-color: var(--green-background-color);
     color: #FFF;
 }
 
@@ -28,7 +126,7 @@ body, button {
 }
 
 .change-theme-btn {
-    background-color: var(--background-color);
+    background-color: var(--green-background-color);
     border: none;
     cursor: pointer;
 }
@@ -45,6 +143,11 @@ body, button {
     color: #FFF;
     width: 420px; /*haha funny weed number */
     height: 270px;
+    /* Neon Border */
+    border: 3px solid;
+    border-image-source: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+    border-image-slice :1;
+    
 }
 
 .modal-header {
@@ -57,15 +160,15 @@ body, button {
 }
 
 /* When the user hovers over the title words ("change" and "theme"). They change to the background color. */
-#change-span:hover {
-    transition: 0.5s;
-    color: var(--background-color);
+.change-span:hover {
+    transition: var(--main-transition);
+    color: var(--green-background-color);
     cursor: pointer;
 }
 
-#theme-span:hover {
-    transition: 0.5s;
-    color: var(--background-color);
+.theme-span:hover {
+    transition: var(--main-transition);
+    color: var(--green-background-color);
     cursor: pointer;
 }
 
@@ -79,9 +182,9 @@ body, button {
 
 .close-btn:hover {
     cursor: pointer;
-    animation-name: modal-close-btn;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    transition: 0.3s;
+    color: var(--green-background-color);
+    cursor: pointer;
 }
 
 /* Label Styles */
@@ -93,7 +196,7 @@ label {
     cursor: pointer;
 }
 
-.modal-form {
+.modal-btn-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -101,6 +204,8 @@ label {
 
 .labels {
     font-family: 'Lato', sans-serif;
+    background-color: #000;
+    margin-bottom: 20px;
     border-color: #FFF;
     border-width: 2px;
     border-style: solid;
@@ -111,6 +216,10 @@ label {
     font-size: 18px;
     cursor: pointer;
     padding: 7px;
+}
+
+.green {
+    margin-top: 10px;
 }
 
 .green:hover {
@@ -174,7 +283,7 @@ header {
 }
 
 .ctrl-buttons:hover {
-    animation-name: ctrl-buttons-bg;
+    animation-name: ctrl-buttons-btn;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
@@ -210,47 +319,64 @@ footer {
 
 
 /* All Animations */
-@keyframes ctrl-buttons-bg {
+@keyframes ctrl-buttons-btn {
     /* background animation */
-    from {background-color: var(--background-color);}
+    from {background-color: var(--green-background-color);}
     to {background-color: #FFF;}
     /* text animation */
     from {color: #FFF;}
-    to {color: var(--background-color);}
+    to {color: var(--green-background-color);}
 }
 
 /* Modal Animations */
-@keyframes modal-close-btn {
-    from {color: #FFF;}
-    to {color: var(--background-color);}
-}
-
 @keyframes green-hover {
+    /* border animation */
     from {border-color: #FFF;}
-    to {border-color: var(--background-color);}
-
+    to {border-color: var(--green-background-color);}
+    /* text animation */
     from {color: #FFF;}
-    to {color: var(--background-color);}
-
+    to {color: var(--green-background-color);}
+    /* background animation */
     from {background-color: #000;}
     to {background-color: #FFF;}
 }
 
 @keyframes orange-hover {
+    /* border animation */
     from {border-color: #FFF;}
     to {border-color: var(--orange-background-color);}
-
+    /* text animation */
     from {color: #FFF;}
     to {color: var(--orange-background-color);}
-
+    /* background animation */
     from {background-color: #000;}
     to {background-color: #FFF;}
 }
 
 @keyframes dark-hover {
+    /* text animation */
     from {color: #FFF;}
     to {color: #000;}
-
+    /* background animation */
     from {background-color: #000;}
     to {background-color: #FFF;}
+}
+
+/* Color Based Animation Changes */
+@keyframes orange-ctrl-btn {
+    /* background animation */
+    from {background-color: var(--orange-background-color);}
+    to {background-color: #FFF;}
+    /* text animation */
+    from {color: #FFF;}
+    to {color: var(--orange-background-color);}
+}
+
+@keyframes dark-ctrl-btn {
+     /* background animation */
+    from {background-color: var(--dark-background-color);}
+    to {background-color: #FFF;}
+    /* text animation */
+    from {color: #FFF;}
+    to {color: var(--dark-background-color);}
 }
